@@ -1,0 +1,36 @@
+{
+  "name": "generator-inspectall",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "brian-mann/generator-inspectall",
+  "author": {
+    "name": "Brian Mann",
+    "email": "brian@backbonerails.com",
+    "url": "https://github.com/brian-mann"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [],
+  "dependencies": {
+    "chalk": "~0.4.0",
+    "rimraf": "^2.2.8",
+    "underscore": "^1.6.0",
+    "yeoman-generator": "~0.16.0",
+    "yosay": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
