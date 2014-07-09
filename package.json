@@ -4,7 +4,7 @@
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "brian-mann/generator-inspectall",
+  "repository": "inspectall/generator-inspectall",
   "author": {
     "name": "Brian Mann",
     "email": "brian@backbonerails.com",
