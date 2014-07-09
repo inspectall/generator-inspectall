@@ -30,6 +30,11 @@ class EntityGenerator extends InspectallBase
 
     @prompt questions, (answers) =>
       @answers = answers
+
+      ## set the urlRoot
+      ## ie: Routes.folders_path()
+      @url = "Routes.#{@modelName.toLowerCase()}s_path()" if answers.url
+
       done()
 
   writing: ->
