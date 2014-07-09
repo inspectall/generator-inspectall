@@ -16,7 +16,7 @@ class EntityGenerator extends InspectallBase
       {
         type: "confirm"
         name: "url"
-        message: "Does this model interact a database?"
+        message: "Does this model sync with a database?"
       },{
         type: "confirm"
         name: "collection"

@@ -1,11 +1,13 @@
 @<%= appName %>.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
 
   class Entities.<%= modelName %> extends Entities.Model
+    <%= answers.url ? "db: " + '"api"' : '' %>
     <%= answers.url ? "urlRoot: " + url : '' %>
   <% if(answers.collection){ %>
   class Entities.<%= collectionName %> extends Entities.Collection
     model: Entities.<%= modelName %>
   <% } %>
+    <%= answers.url ? "db: " + '"api"' : '' %>
     <%= answers.url ? "url: " + url : '' %>
 
   <% if (answers.handlers){ %>
