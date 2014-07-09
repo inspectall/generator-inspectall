@@ -15,7 +15,9 @@ class InspectallBase extends yeoman.generators.NamedBase
     @appName      = @config.get("appName") || @appname
     @appPath      = @config.get("appPath")
     @entitiesPath = @config.get("entitiesPath")
+    @testPath     = @config.get("testPath")
 
+    @rootPath = @destinationRoot()
     @destinationRoot(path.join(@destinationRoot(), @appPath))
 
     ## mixin each of the mixin functions
