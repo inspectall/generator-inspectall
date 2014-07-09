@@ -17,7 +17,7 @@ class ModuleGenerator extends InspectallBase
       type: Array
 
   ## all examples use 'folders' as @name
-  init: ->
+  initializing: ->
     ## ie: folders
     @moduleFileName = @_.str.underscored(@name)
 
