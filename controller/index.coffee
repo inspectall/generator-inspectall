@@ -45,7 +45,7 @@ class ControllerGenerator extends InspectallBase
       action  = action.toLowerCase()
 
       ## ie: folders/list/templates/layout
-      @templatePath    = [@moduleFileName, action, "layout"].join("/")
+      @templatePath    = [@moduleFileName, action, "#{action}_layout"].join("/")
 
       ## insert /templates for use as the absolute template path
       @absTemplatePath = @templatePath.split("/")
@@ -57,6 +57,6 @@ class ControllerGenerator extends InspectallBase
 
       @template "controller.coffee", "#{action}/#{action}_controller.coffee", data
       @template "view.coffee", "#{action}/#{action}_view.coffee", data
-      @template "layout.eco", "#{action}/templates/layout.eco", data
+      @template "layout.eco", "#{action}/templates/#{action}_layout.eco", data
 
 module.exports = ControllerGenerator
