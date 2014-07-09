@@ -38,8 +38,10 @@ class ModuleGenerator extends InspectallBase
     @template "module.coffee", @moduleFileName + "_app.coffee"
 
   createActions: ->
-    ## create the initial dirs for the actions
-    _.each @actions, (action) =>
-      @mkdir action.toLowerCase()
+    ## add name as the first argument
+    @actions.unshift(@name)
+
+    ## invoke the inspectall:controller subgenerator
+    @invoke "inspectall:controller", args: @actions
 
 module.exports = ModuleGenerator
