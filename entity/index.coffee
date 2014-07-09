@@ -49,4 +49,7 @@ class EntityGenerator extends InspectallBase
 
     @template "entity.coffee", dest.join("/")
 
+    ## create the test /spec file in test/spec/entities
+    @template "test.coffee", path.join(@rootPath, @testPath, "entities", @name.toLowerCase() + "_spec.coffee")
+
 module.exports = EntityGenerator
