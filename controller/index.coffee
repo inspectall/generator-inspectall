@@ -42,9 +42,21 @@ class ControllerGenerator extends InspectallBase
     ## create the initial controller / view / template
     ## for each action
     _.each @actions, (action) =>
-      data = _.extend {}, @, action: @_.classify(action)
-      file = action.toLowerCase() + "/" + action.toLowerCase()
-      @template "controller.coffee", "#{file}_controller.coffee", data
-      @template "view.coffee", "#{file}_view.coffee", data
+      action  = action.toLowerCase()
+
+      ## ie: folders/list/templates/layout
+      @templatePath    = [@moduleFileName, action, "layout"].join("/")
+
+      ## insert /templates for use as the absolute template path
+      @absTemplatePath = @templatePath.split("/")
+      @absTemplatePath.splice(2, 0, "templates")
+      @absTemplatePath = @absTemplatePath.join("/")
+
+      ## create the data object for use in each of the templates below
+      data    = _.extend {}, @, action: @_.classify(action)
+
+      @template "controller.coffee", "#{action}/#{action}_controller.coffee", data
+      @template "view.coffee", "#{action}/#{action}_view.coffee", data
+      @template "layout.eco", "#{action}/templates/layout.eco", data
 
 module.exports = ControllerGenerator
