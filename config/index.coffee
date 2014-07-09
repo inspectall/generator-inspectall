@@ -16,6 +16,10 @@ class ConfigGenerator extends yeoman.generators.Base
         name: "entitiesPath"
         message: "What's the path to your entities?"
         default: "entities"
+      },{
+        name: "testPath"
+        message: "What's the path to your test specs?"
+        default: "app/test/spec"
       }
     ]
 
