@@ -6,8 +6,5 @@
     manifest: "<%= moduleFileName %>"
 
     actions:
-    <% _.each(actions, function(action){ %>
-      <%= action.toLowerCase() %>: ->
-    <% }) %>
 
   router = new Router
