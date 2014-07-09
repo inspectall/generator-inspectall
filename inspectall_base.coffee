@@ -12,8 +12,9 @@ class InspectallBase extends yeoman.generators.NamedBase
   constructor: ->
     super
 
-    @appName = @config.get("appName") || @appname
-    @appPath = @config.get("appPath")
+    @appName      = @config.get("appName") || @appname
+    @appPath      = @config.get("appPath")
+    @entitiesPath = @config.get("entitiesPath")
 
     @destinationRoot(path.join(@destinationRoot(), @appPath))
 
