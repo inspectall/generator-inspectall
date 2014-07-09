@@ -1,4 +1,4 @@
-describe "<%= action %> <%= moduleAppName %>" ->
+describe "<%= action %> <%= moduleAppName %>", ->
   beforeEach ->
     @sandbox.useFakeServer()
 
