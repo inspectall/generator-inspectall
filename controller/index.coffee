@@ -17,7 +17,7 @@ class ControllerGenerator extends InspectallBase
       type: Array
 
   ## all examples use 'folders' as @name
-  init: ->
+  initializing: ->
     ## ie: folders
     @moduleFileName = @_.str.underscored(@name)
 
@@ -58,5 +58,8 @@ class ControllerGenerator extends InspectallBase
       @template "controller.coffee", "#{action}/#{action}_controller.coffee", data
       @template "view.coffee", "#{action}/#{action}_view.coffee", data
       @template "layout.eco", "#{action}/templates/#{action}_layout.eco", data
+
+      ## create the test /spec file in test/spec/apps/folders_list_spec
+      @template "test.coffee", path.join(@rootPath, @testPath, "apps", @moduleFileName, "#{@moduleFileName}_#{action}_spec.coffee"), data
 
 module.exports = ControllerGenerator
