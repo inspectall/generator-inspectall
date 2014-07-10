@@ -36,6 +36,7 @@ class ControllerGenerator extends InspectallBase
 
     _.each @actions, (action) =>
       moduleFile = moduleFile.replace /(actions\:)/, "$1" + "\n      #{action}: ->"
+      @conflicter.force = true
       @write @moduleFileName + "_app.coffee", moduleFile
 
   createActions: ->
